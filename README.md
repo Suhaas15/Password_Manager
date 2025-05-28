@@ -1,2 +1,2 @@
-# Password_Manager
-A python Tkinter app to generate and store your passwords securely.
+# Password Manager
+A Python Tkinter app to generate and store your passwords securely.
