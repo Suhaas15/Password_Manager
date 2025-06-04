@@ -84,11 +84,14 @@ window = Tk()
 window.title("Password Manager")
 window.minsize(width=350, height=300)
 window.config(padx=50, pady=50)
+window.columnconfigure(0, weight=0)
+window.columnconfigure(1, weight=1)
+window.columnconfigure(2, weight=0)
 
 canvas = Canvas(width=200, height=200)
 logo_img = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_img)
-canvas.grid(column=1, row=0)
+canvas.grid(row=0, column=0, columnspan=3, pady=(0, 20))
 
 #Labels
 website_label = Label(text="Website:")
@@ -110,7 +113,7 @@ password_entry.grid(row=3, column=1)
 
 #Buttons
 search_button = Button(text="Search", width=13, command=find_password)
-search_button.grid(row=4, column=1)
+search_button.grid(row=1, column=2)
 generate_password_button = Button(text="Generate Password", command=generate_password)
 generate_password_button.grid(row=3, column=2)
 add_button = Button(text="Add", width=33, command=save)
